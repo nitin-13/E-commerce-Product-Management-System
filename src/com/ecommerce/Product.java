@@ -1,10 +1,14 @@
 package com.ecommerce;
 
+import java.text.NumberFormat;
+
 public abstract class Product { //Base Class and Provides Abstraction
     private String name;
     private String brand;
     private double price;
     private String description;
+
+    NumberFormat formatPrice = NumberFormat.getInstance();
 
     Product(String name, String brand, double price, String description) {
         this.name = name;

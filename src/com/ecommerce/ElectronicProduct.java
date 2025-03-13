@@ -20,7 +20,7 @@ public class ElectronicProduct extends Product {//Inheritance
 
     @Override
     public String toString() {
-        return "Electronic Product: " + getName() + ", Brand: " + getBrand() + ", Price: " + getPrice() + ", Warranty: " + getWarranty() + " Months.";
+        return "Electronic Product: " + getName() + ", Brand: " + getBrand() + ", Price: ₹" + formatPrice.format(getPrice()) + ", Warranty: " + getWarranty() + " Months";
     }
 
 

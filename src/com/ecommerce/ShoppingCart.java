@@ -2,8 +2,10 @@ package com.ecommerce;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.text.NumberFormat;
 
 public class ShoppingCart {
+    NumberFormat formatCartTotal = NumberFormat.getInstance();
     private List<Product> items = new ArrayList<>();
 
     public void addItem(Product product) {
@@ -23,6 +25,6 @@ public class ShoppingCart {
         for (Product item : items) {
             System.out.println(item.toString());
         }
-        System.out.println("\nYour Cart Total : " + calculateCartTotal() + " Rupees. Thank You for shopping with us :)");
+        System.out.println("\nYour Cart Total : ₹" + formatCartTotal.format(calculateCartTotal()) + ". Thank You for shopping with us :)");
     }
 }
