@@ -19,10 +19,10 @@ public class ShoppingCart {
     }
 
     public void displayShoppingCart() {
-        System.out.println("Here is your shopping cart -> ");
+        System.out.println("Here is your shopping cart -> \n");
         for (Product item : items) {
             System.out.println(item.toString());
         }
-        System.out.println("Cart Total : " + calculateCartTotal() + " Rupees.");
+        System.out.println("\nYour Cart Total : " + calculateCartTotal() + " Rupees. Thank You for shopping with us :)");
     }
 }

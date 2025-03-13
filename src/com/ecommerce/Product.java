@@ -2,11 +2,13 @@ package com.ecommerce;
 
 public abstract class Product { //Base Class and Provides Abstraction
     private String name;
+    private String brand;
     private double price;
     private String description;
 
-    Product(String name, double price, String description) {
+    Product(String name, String brand, double price, String description) {
         this.name = name;
+        this.brand = brand;
         this.price = price;
         this.description = description;
     }
@@ -37,4 +39,12 @@ public abstract class Product { //Base Class and Provides Abstraction
     }
 
     public abstract String getProductType();
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 }

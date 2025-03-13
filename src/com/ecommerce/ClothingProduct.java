@@ -5,8 +5,8 @@ public class ClothingProduct extends Product {
     private String size;
     private String material;
 
-    ClothingProduct(String name, double price, String description, String type, String size, String material) {
-        super(name, price, description);
+    ClothingProduct(String name, String brand, double price, String description, String type, String size, String material) {
+        super(name, brand, price, description);
         this.type = type;
         this.size = size;
         this.material = material;
@@ -31,7 +31,7 @@ public class ClothingProduct extends Product {
 
     @Override
     public String toString() {
-        return "Clothing Product: " + getName() + ", Price: " + getPrice() + ",Type: " + getType() + " Size: " + getSize() + ", Material: " + getMaterial() + ".";
+        return "Clothing Product: " + getName() + ", Brand: " + getBrand() + ", Price: " + getPrice() + ",Type: " + getType() + " Size: " + getSize() + ", Material: " + getMaterial() + ".";
     }
 
 }
