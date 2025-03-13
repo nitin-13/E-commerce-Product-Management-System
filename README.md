@@ -10,13 +10,13 @@
 ### *Project Structure -*
 
 ├── src/  
-│ ├── com/  
-│ │ └──  
-│ │ ├── Product.java  
-│ │ ├── ElectronicProduct.java  
-│ │ ├── ClothingProduct.java  
-│ │ ├── ShoppingCart.java  
-│ │ ├── Main.java
+│ ├── com/   
+│ │ └── ecommerce/      
+│ │ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Product.java  
+│ │ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── ElectronicProduct.java  
+│ │ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── ClothingProduct.java  
+│ │ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── ShoppingCart.java  
+│ │ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Main.java
 
 ### *OOPS Concepts Illustrated -*
 
