@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.text.NumberFormat;
 
-public class ShoppingCart {
+public class ShoppingCart implements Payment {
     NumberFormat formatCartTotal = NumberFormat.getInstance();
     private List<Product> items = new ArrayList<>();
 
@@ -26,5 +26,22 @@ public class ShoppingCart {
             System.out.println(item.toString());
         }
         System.out.println("\nYour Cart Total : ₹" + formatCartTotal.format(calculateCartTotal()) + ". Thank You for shopping with us :)");
+    }
+
+    @Override
+    public void payWithNetBanking() {
+        System.out.println("Enter your net banking credentials");
+    }
+
+    @Override
+    public void payWithCard(int cardNumber, String date, int cvv) {
+        System.out.println("Pay with Card");
+
+    }
+
+    @Override
+    public void payWithUPI() {
+        System.out.println("pay with UPI");
+
     }
 }
