@@ -34,8 +34,8 @@ public class ShoppingCart implements Payment {
     }
 
     @Override
-    public void payWithCard(int cardNumber, String date, int cvv) {
-        System.out.println("Pay with Card");
+    public void payWithCard(String cardNumber) throws InvalidCardNumber {
+        //Add logic to check if cardNumber is only numeric
 
     }
 
