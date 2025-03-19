@@ -36,7 +36,16 @@ public class ShoppingCart implements Payment {
     @Override
     public void payWithCard(String cardNumber) throws InvalidCardNumber {
         //Add logic to check if cardNumber is only numeric
+        if (isNumeric(cardNumber)) {
+            System.out.println("Valid card number, payment Successful");
+        } else {
+            throw new InvalidCardNumber("Invalid card number.");
+        }
 
+    }
+
+    private boolean isNumeric(String cardNumber) {
+        return false;
     }
 
     @Override
