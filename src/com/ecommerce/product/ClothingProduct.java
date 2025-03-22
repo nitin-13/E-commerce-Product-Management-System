@@ -1,11 +1,11 @@
-package com.ecommerce;
+package com.ecommerce.product;
 
 public class ClothingProduct extends Product {
     private String type; //daily_casual_office
     private String size;
     private String material;
 
-    ClothingProduct(String name, String brand, double price, String description, String type, String size, String material) {
+    public ClothingProduct(String name, String brand, double price, String description, String type, String size, String material) {
         super(name, brand, price, description);
         this.type = type;
         this.size = size;

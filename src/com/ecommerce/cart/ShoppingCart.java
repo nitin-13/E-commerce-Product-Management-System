@@ -1,15 +1,28 @@
-package com.ecommerce;
+package com.ecommerce.cart;
+
+import com.ecommerce.payment.InvalidCardNumber;
+
+import com.ecommerce.product.Product;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.text.NumberFormat;
 
-public class ShoppingCart implements Payment {
+public class ShoppingCart {
     NumberFormat formatCartTotal = NumberFormat.getInstance();
     private List<Product> items = new ArrayList<>();
 
     public void addItem(Product product) {
         items.add(product);
+        System.out.println(product.getName() + " has been added to your cart.");
+    }
+
+    public void removeItem(Product product) {
+        if (items.remove(product)) {
+            System.out.println(product.getName() + " has been removed from your cart.");
+        } else {
+            System.out.println("The product you are trying to remove is not in your cart.");
+        }
     }
 
     public double calculateCartTotal() {
@@ -28,29 +41,5 @@ public class ShoppingCart implements Payment {
         System.out.println("\nYour Cart Total : ₹" + formatCartTotal.format(calculateCartTotal()) + ". Thank You for shopping with us :)");
     }
 
-    @Override
-    public void payWithNetBanking() {
-        System.out.println("Enter your net banking credentials");
-    }
 
-    @Override
-    public void payWithCard(String cardNumber) throws InvalidCardNumber {
-        //Add logic to check if cardNumber is only numeric
-        if (isNumeric(cardNumber)) {
-            System.out.println("Valid card number, payment Successful");
-        } else {
-            throw new InvalidCardNumber("Invalid card number.");
-        }
-
-    }
-
-    private boolean isNumeric(String cardNumber) {
-        return false;
-    }
-
-    @Override
-    public void payWithUPI() {
-        System.out.println("pay with UPI");
-
-    }
 }

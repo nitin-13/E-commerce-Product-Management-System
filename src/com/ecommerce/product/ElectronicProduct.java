@@ -1,9 +1,9 @@
-package com.ecommerce;
+package com.ecommerce.product;
 
 public class ElectronicProduct extends Product {//Inheritance
     private int warrantyMonths;
 
-    ElectronicProduct(String name, String brand, double price, String description, int warrantyMonths) {
+    public ElectronicProduct(String name, String brand, double price, String description, int warrantyMonths) {
         super(name, brand, price, description);
         this.warrantyMonths = warrantyMonths;
     }

@@ -1,4 +1,4 @@
-package com.ecommerce;
+package com.ecommerce.product;
 
 import java.text.NumberFormat;
 
@@ -10,7 +10,7 @@ public abstract class Product { //Base Class and Provides Abstraction
 
     NumberFormat formatPrice = NumberFormat.getInstance();
 
-    Product(String name, String brand, double price, String description) {
+    public Product(String name, String brand, double price, String description) {
         this.name = name;
         this.brand = brand;
         this.price = price;

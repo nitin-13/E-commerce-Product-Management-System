@@ -1,10 +1,10 @@
-package com.ecommerce;
+package com.ecommerce.product;
 
 public class KitchenWareProduct extends Product {
     private String type;
     private String features;
 
-    KitchenWareProduct(String name, String brand, double price, String description, String type, String features) {
+    public KitchenWareProduct(String name, String brand, double price, String description, String type, String features) {
         super(name, brand, price, description);
         this.type = type;
         this.features = features;
