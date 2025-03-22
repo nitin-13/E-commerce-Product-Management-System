@@ -1,14 +1,12 @@
 package com.ecommerce.cart;
 
-import com.ecommerce.payment.InvalidCardNumber;
-
 import com.ecommerce.product.Product;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.text.NumberFormat;
 
-public class ShoppingCart {
+public class Cart {
     NumberFormat formatCartTotal = NumberFormat.getInstance();
     private List<Product> items = new ArrayList<>();
 

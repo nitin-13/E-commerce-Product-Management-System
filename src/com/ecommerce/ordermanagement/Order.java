@@ -1,18 +1,16 @@
 package com.ecommerce.ordermanagement;
 
-import com.ecommerce.cart.ShoppingCart;
+import com.ecommerce.cart.Cart;
 import com.ecommerce.payment.InvalidCardNumber;
 import com.ecommerce.payment.Payment;
 import com.ecommerce.usermanagement.Customer;
 
-import java.util.Random;
-
 public class Order {
     private int orderNumber;
     private Customer customer;
-    private ShoppingCart cart;
+    private Cart cart;
 
-    public Order(Customer customer, ShoppingCart cart) {
+    public Order(Customer customer, Cart cart) {
         this.orderNumber = OrderNumberGenerator.generateOrderNumber();
         this.customer = customer;
         this.cart = cart;

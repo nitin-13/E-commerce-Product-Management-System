@@ -19,7 +19,6 @@ public class CardPayment extends Payment {
             throw new InvalidCardNumber("Error: Payment Failed, Invalid card number");
         } else {
             System.out.println("Paid ₹ " + totalAmount + " using card ending with " + cardNumber.substring(12));
-
         }
 
     }

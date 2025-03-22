@@ -1,6 +1,6 @@
 package com.ecommerce;
 
-import com.ecommerce.cart.ShoppingCart;
+import com.ecommerce.cart.Cart;
 import com.ecommerce.ordermanagement.Order;
 import com.ecommerce.payment.CardPayment;
 import com.ecommerce.payment.InvalidCardNumber;
@@ -23,7 +23,7 @@ public class Main {
         Customer customer2 = new Customer("shetyenitin13", "shetyenitin13@gmail.com", "Pernem, 403512", "+91 9158926886");
         Customer customer3 = new Customer("nitin.shetye13", "nitinshetye13@gmail.com", "Panaji, 403501", "+91 9158926886");
 
-        ShoppingCart cart = new ShoppingCart();
+        Cart cart = new Cart();
 
         cart.addItem(mobile);
         cart.addItem(tshirt);

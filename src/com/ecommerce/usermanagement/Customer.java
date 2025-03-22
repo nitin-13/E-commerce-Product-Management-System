@@ -1,6 +1,6 @@
 package com.ecommerce.usermanagement;
 
-import com.ecommerce.cart.ShoppingCart;
+import com.ecommerce.cart.Cart;
 import com.ecommerce.ordermanagement.Order;
 import com.ecommerce.payment.Payment;
 
@@ -12,7 +12,7 @@ public class Customer extends User {
     private String phone;
     private List<Order> orders;
     private List<Payment> paymentMethods;
-    private List<ShoppingCart> cart;
+    private List<Cart> cart;
 
 
     public Customer(String userName, String email, String shippingAddress, String phone) {
