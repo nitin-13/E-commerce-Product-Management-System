@@ -1,4 +1,4 @@
-# E-commerce Product Management System
+# E-commerce Platform
 
 ## *This project will demonstrate -*
 
