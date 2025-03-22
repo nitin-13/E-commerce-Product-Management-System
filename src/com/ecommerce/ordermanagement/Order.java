@@ -29,5 +29,6 @@ public class Order {
         System.out.println("Total Amount: " + cart.calculateCartTotal());
         paymentMethod.processPayment(cart.calculateCartTotal());
         System.out.println("Order placed successfully!");
+        customer.addOrder(this);
     }
 }

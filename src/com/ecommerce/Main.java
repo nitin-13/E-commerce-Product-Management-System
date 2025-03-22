@@ -33,7 +33,7 @@ public class Main {
 
         Order order = new Order(customer1, cart);
 
-        Payment debitCard = new CardPayment("1234567890123456", "Nitin", "12/23", 123);
+        Payment debitCard = new CardPayment("123456789012345", "Nitin", "12/23", 123);
 
         try {
             order.placeOrder(debitCard);
@@ -41,5 +41,16 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
+        customer2.getMyOrders();
+
+        Order order2 = new Order(customer1, cart);
+
+        Payment debitCard2 = new CardPayment("123456789012345", "Nitin", "12/23", 123);
+
+        try {
+            order.placeOrder(debitCard);
+        } catch (InvalidCardNumber e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
