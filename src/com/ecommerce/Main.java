@@ -3,6 +3,7 @@ package com.ecommerce;
 import com.ecommerce.cart.ShoppingCart;
 import com.ecommerce.ordermanagement.Order;
 import com.ecommerce.payment.CardPayment;
+import com.ecommerce.payment.InvalidCardNumber;
 import com.ecommerce.payment.Payment;
 import com.ecommerce.product.ClothingProduct;
 import com.ecommerce.product.ElectronicProduct;
@@ -36,8 +37,8 @@ public class Main {
 
         try {
             order.placeOrder(debitCard);
-        } catch (Exception e) {
-            System.out.println("Payment failed. Please try again.");
+        } catch (InvalidCardNumber e) {
+            System.out.println(e.getMessage());
         }
 
     }

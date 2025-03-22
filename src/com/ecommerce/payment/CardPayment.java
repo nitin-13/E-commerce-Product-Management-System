@@ -16,7 +16,7 @@ public class CardPayment extends Payment {
     @Override
     public void processPayment(double totalAmount) throws InvalidCardNumber {
         if (cardNumber.length() != 16) {
-            throw new InvalidCardNumber("Invalid card number");
+            throw new InvalidCardNumber("Error: Payment Failed, Invalid card number");
         } else {
             System.out.println("Paid ₹ " + totalAmount + " using card ending with " + cardNumber.substring(12));
 
