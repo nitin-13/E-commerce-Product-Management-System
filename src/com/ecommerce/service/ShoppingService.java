@@ -2,8 +2,9 @@ package com.ecommerce.service;
 
 
 import com.ecommerce.ordermanagement.Order;
+import com.ecommerce.payment.*;
 import com.ecommerce.product.Product;
-import com.ecommerce.usermanagement.Customer;
+import com.ecommerce.customermanagement.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +23,9 @@ public class ShoppingService {
         customers.add(customer);
     }
 
-
-
     public void addProduct(Product product){
         products.add(product);
     }
-
-
 
     public Customer findCustomer(String userName){
         for(Customer customer : customers){
@@ -43,6 +40,18 @@ public class ShoppingService {
         for(Product product : products){
             if(product.getProductName().equalsIgnoreCase(productName)){
                 return product;
+            }
+        }
+        return null;
+    }
+
+    public Payment getPaymentMethod(String userName, String paymentMethod) {
+        Customer customer = findCustomer(userName);
+        if(customer != null) {
+            if(paymentMethod.equalsIgnoreCase("card")) {
+                return customer.getPaymentMethod();
+            } else if(paymentMethod.equalsIgnoreCase("upi")) {
+                return customer.getPaymentMethod();
             }
         }
         return null;
@@ -96,6 +105,15 @@ public class ShoppingService {
         }
     }
 
-
-
+    public void checkout(String userName,String paymentMethod){
+        Customer customer = findCustomer(userName);
+        Payment payment = getPaymentMethod(userName, paymentMethod);
+        if(customer != null){
+            order = new Order(customer, customer.getCart());
+            order.placeOrder(payment);
+        }
+        else {
+            System.out.println("Customer not found");
+        }
+    }
 }

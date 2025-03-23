@@ -1,19 +1,16 @@
 package com.ecommerce;
 
-import com.ecommerce.cart.Cart;
-import com.ecommerce.ordermanagement.Order;
-import com.ecommerce.payment.CardPayment;
 import com.ecommerce.payment.InvalidCardNumber;
-import com.ecommerce.payment.Payment;
+import com.ecommerce.payment.InvalidUPIID;
 import com.ecommerce.product.ClothingProduct;
 import com.ecommerce.product.ElectronicProduct;
 import com.ecommerce.product.KitchenWareProduct;
 import com.ecommerce.product.Product;
 import com.ecommerce.service.ShoppingService;
-import com.ecommerce.usermanagement.Customer;
+import com.ecommerce.customermanagement.Customer;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidUPIID, InvalidCardNumber {
         System.out.println("Welcome to the Ecommerce Platform\n");
 
         ShoppingService shoppingService = new ShoppingService();
@@ -39,6 +36,14 @@ public class Main {
         shoppingService.addCustomer(customer2);
         shoppingService.addCustomer(customer3);
 
+        //Add payment methods
+        try {
+            customer1.addCardPayment("1234567890123456", "12/25", 123);
+            customer1.addUPIPayment("nitinshetye@okaxis");
+        } catch (InvalidUPIID | InvalidCardNumber e) {
+            System.out.println(e.getMessage());
+        }
+
         //Display all customers
         shoppingService.displayAllCustomers();
 
@@ -48,9 +53,7 @@ public class Main {
 
         shoppingService.removeProductFromCart("nitinshetye13", "iPhone 16 Pro");
 
-
-
-
+        shoppingService.checkout("nitinshetye13", "upi");
 
 
 
