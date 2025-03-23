@@ -10,7 +10,7 @@ import com.ecommerce.service.ShoppingService;
 import com.ecommerce.customermanagement.Customer;
 
 public class Main {
-    public static void main(String[] args) throws InvalidUPIID, InvalidCardNumber {
+    public static void main(String[] args)  {
         System.out.println("Welcome to the Ecommerce Platform\n");
 
         ShoppingService shoppingService = new ShoppingService();
@@ -54,6 +54,8 @@ public class Main {
         shoppingService.removeProductFromCart("nitinshetye13", "iPhone 16 Pro");
 
         shoppingService.checkout("nitinshetye13", "upi");
+
+        customer1.getMyOrders();
 
 
 

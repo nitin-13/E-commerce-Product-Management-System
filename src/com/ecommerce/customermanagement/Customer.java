@@ -70,8 +70,11 @@ public class Customer {
         if (orders.isEmpty()) {
             System.out.println("You have no orders");
         }
-        for(Order order : orders){
-            System.out.println(order.getOrderNumber());
+        else {
+            System.out.println("Here are your orders : ");
+            for (Order order : orders) {
+                System.out.println(order.getOrderNumber());
+            }
         }
     }
 
@@ -95,7 +98,7 @@ public class Customer {
             throw new InvalidUPIID("Error: Payment Failed, Invalid UPI ID");
         } else {
             upiPayment = new UPIPayment(upiId);
-            System.out.println("UPI ID "+upiId+"added successfully");
+            System.out.println("UPI ID "+upiId+" added successfully");
         }
     }
 
