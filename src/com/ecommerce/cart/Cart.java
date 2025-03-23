@@ -12,12 +12,12 @@ public class Cart {
 
     public void addItem(Product product) {
         items.add(product);
-        System.out.println(product.getName() + " has been added to your cart.");
+        System.out.println(product.getProductName() + " has been added to your cart.");
     }
 
     public void removeItem(Product product) {
         if (items.remove(product)) {
-            System.out.println(product.getName() + " has been removed from your cart.");
+            System.out.println(product.getProductName() + " has been removed from your cart.");
         } else {
             System.out.println("The product you are trying to remove is not in your cart.");
         }
@@ -32,11 +32,15 @@ public class Cart {
     }
 
     public void displayShoppingCart() {
-        System.out.println("Here is your shopping cart -> \n");
-        for (Product item : items) {
-            System.out.println(item.toString());
+        if (items.isEmpty()) {
+            System.out.println("Your cart is empty.");
         }
-        System.out.println("\nYour Cart Total : ₹" + formatCartTotal.format(calculateCartTotal()) + ". Thank You for shopping with us :)");
+            else {
+            System.out.println("Your cart contains:");
+                for (Product item : items) {
+                System.out.println(item.toString());
+            }
+        }
     }
 
 

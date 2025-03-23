@@ -25,6 +25,6 @@ public class KitchenWareProduct extends Product {
 
     @Override
     public String toString() {
-        return "Kitchen Ware Product: " + getName() + ", Brand: " + getBrand() + ", Price: ₹" + formatPrice.format(getPrice()) + ", Type: " + getType() + ", Features: " + getFeatures();
+        return "Kitchen Ware Product: " + getProductName() + ", Brand: " + getBrand() + ", Price: ₹" + formatPrice.format(getPrice()) + ", Type: " + getType() + ", Features: " + getFeatures();
     }
 }

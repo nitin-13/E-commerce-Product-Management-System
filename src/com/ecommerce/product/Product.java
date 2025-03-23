@@ -18,7 +18,7 @@ public abstract class Product { //Base Class and Provides Abstraction
     }
 
 
-    public String getName() {
+    public String getProductName() {
         return name;
     }
 

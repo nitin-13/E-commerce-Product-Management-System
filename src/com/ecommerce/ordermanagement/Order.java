@@ -2,6 +2,7 @@ package com.ecommerce.ordermanagement;
 
 import com.ecommerce.cart.Cart;
 import com.ecommerce.payment.InvalidCardNumber;
+import com.ecommerce.payment.InvalidUPIID;
 import com.ecommerce.payment.Payment;
 import com.ecommerce.usermanagement.Customer;
 
@@ -20,7 +21,7 @@ public class Order {
         return orderNumber;
     }
 
-    public void placeOrder(Payment paymentMethod) throws InvalidCardNumber {
+    public void placeOrder(Payment paymentMethod) throws InvalidCardNumber, InvalidUPIID {
         System.out.println("\nOrder ID: " + getOrderNumber());
         System.out.println("Customer: " + customer.getUserName());
         System.out.println("Shipping Address: " + customer.getAddress());

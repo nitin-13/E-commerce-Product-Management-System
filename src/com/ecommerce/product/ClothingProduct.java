@@ -31,7 +31,7 @@ public class ClothingProduct extends Product {
 
     @Override
     public String toString() {
-        return "Clothing Product: " + getName() + ", Brand: " + getBrand() + ", Price: ₹" + formatPrice.format(getPrice()) + ", Type: " + getType() + ", Size: " + getSize() + ", Material: " + getMaterial();
+        return "Clothing Product: " + getProductName() + ", Brand: " + getBrand() + ", Price: ₹" + formatPrice.format(getPrice()) + ", Type: " + getType() + ", Size: " + getSize() + ", Material: " + getMaterial();
     }
 
 }

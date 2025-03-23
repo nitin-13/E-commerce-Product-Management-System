@@ -9,11 +9,14 @@ import com.ecommerce.product.ClothingProduct;
 import com.ecommerce.product.ElectronicProduct;
 import com.ecommerce.product.KitchenWareProduct;
 import com.ecommerce.product.Product;
+import com.ecommerce.service.ShoppingService;
 import com.ecommerce.usermanagement.Customer;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("This is an E-commerce Product Management System\n");
+        System.out.println("Welcome to the Ecommerce Platform\n");
+
+        ShoppingService shoppingService = new ShoppingService();
 
         Product mobile = new ElectronicProduct("iPhone 16 Pro", "Apple", 90000, "Built for Apple Intelligence", 12);
         Product tshirt = new ClothingProduct("Polo Tshirt", "Jockey", 500, "This is a Polo Tshirt", "Casual", "XL", "Cotton");
@@ -23,34 +26,33 @@ public class Main {
         Customer customer2 = new Customer("shetyenitin13", "shetyenitin13@gmail.com", "Pernem, 403512", "+91 9158926886");
         Customer customer3 = new Customer("nitin.shetye13", "nitinshetye13@gmail.com", "Panaji, 403501", "+91 9158926886");
 
-        Cart cart = new Cart();
+        //Add products to the shopping service
+        shoppingService.addProduct(mobile);
+        shoppingService.addProduct(tshirt);
+        shoppingService.addProduct(nonStickPan);
 
-        cart.addItem(mobile);
-        cart.addItem(tshirt);
-        cart.addItem(nonStickPan);
+        //Display all products
+        shoppingService.displayAllProducts();
 
-        cart.displayShoppingCart();
+        //Add customers to the shopping service
+        shoppingService.addCustomer(customer1);
+        shoppingService.addCustomer(customer2);
+        shoppingService.addCustomer(customer3);
 
-        Order order = new Order(customer1, cart);
+        //Display all customers
+        shoppingService.displayAllCustomers();
 
-        Payment debitCard = new CardPayment("123456789012345", "Nitin", "12/23", 123);
+        shoppingService.addProductToCart("nitinshetye13", "iPhone 16 Pro");
+        shoppingService.addProductToCart("nitinshetye13", "Polo Tshirt");
+        shoppingService.displayCart("nitinshetye13");
 
-        try {
-            order.placeOrder(debitCard);
-        } catch (InvalidCardNumber e) {
-            System.out.println(e.getMessage());
-        }
+        shoppingService.removeProductFromCart("nitinshetye13", "iPhone 16 Pro");
 
-        customer2.getMyOrders();
 
-        Order order2 = new Order(customer1, cart);
 
-        Payment debitCard2 = new CardPayment("123456789012345", "Nitin", "12/23", 123);
 
-        try {
-            order.placeOrder(debitCard);
-        } catch (InvalidCardNumber e) {
-            System.out.println(e.getMessage());
-        }
+
+
+
     }
 }
