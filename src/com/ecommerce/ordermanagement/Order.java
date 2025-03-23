@@ -1,8 +1,6 @@
 package com.ecommerce.ordermanagement;
 
 import com.ecommerce.cart.Cart;
-import com.ecommerce.payment.InvalidCardNumber;
-import com.ecommerce.payment.InvalidUPIID;
 import com.ecommerce.payment.Payment;
 import com.ecommerce.customermanagement.Customer;
 
@@ -29,5 +27,6 @@ public class Order {
         paymentMethod.processPayment(cart.calculateCartTotal());
         System.out.println("Order placed successfully!");
         customer.addOrder(this);
+        cart.clearCart();
     }
 }

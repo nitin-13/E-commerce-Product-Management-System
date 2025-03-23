@@ -11,12 +11,12 @@ public class CardPayment extends Payment {
         this.cvv = cvv;
     }
 
+    public String getCardNumber() {
+        return "************" + cardNumber.substring(12);
+    }
+
     @Override
     public void processPayment(double totalAmount) {
-
-
-            System.out.println("Paid ₹ " + totalAmount + " using card ending with " + cardNumber.substring(12));
-
-
+        System.out.println("Paid ₹ " + totalAmount + " using card ending with " + cardNumber.substring(12));
     }
 }

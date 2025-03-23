@@ -1,4 +1,4 @@
-package com.ecommerce.payment;
+package com.ecommerce.Exceptions;
 
 public class InvalidCardNumber extends Exception {
     public InvalidCardNumber(String message) {

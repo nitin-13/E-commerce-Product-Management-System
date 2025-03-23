@@ -8,6 +8,10 @@ public class UPIPayment extends Payment {
         this.upiId = upiId;
     }
 
+    public String getUpiId() {
+        return upiId;
+    }
+
     @Override
     public void processPayment(double totalAmount) {
 

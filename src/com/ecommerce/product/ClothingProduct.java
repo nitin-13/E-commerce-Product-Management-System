@@ -5,8 +5,8 @@ public class ClothingProduct extends Product {
     private String size;
     private String material;
 
-    public ClothingProduct(String name, String brand, double price, String description, String type, String size, String material) {
-        super(name, brand, price, description);
+    public ClothingProduct(String productId, String name, String brand, double price, String description, String type, String size, String material) {
+        super(productId, name, brand, price, description);
         this.type = type;
         this.size = size;
         this.material = material;
@@ -31,7 +31,13 @@ public class ClothingProduct extends Product {
 
     @Override
     public String toString() {
-        return "Clothing Product: " + getProductName() + ", Brand: " + getBrand() + ", Price: ₹" + formatPrice.format(getPrice()) + ", Type: " + getType() + ", Size: " + getSize() + ", Material: " + getMaterial();
+        return "Clothing Product: Product Id: " + getProductId() +
+                ", Name: " + getProductName() +
+                ", Brand: " + getBrand() +
+                ", Price: ₹" + formatPrice.format(getPrice()) +
+                ", Type: " + getType() +
+                ", Size: " + getSize() +
+                ", Material: " + getMaterial();
     }
 
 }

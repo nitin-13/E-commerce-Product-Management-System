@@ -4,8 +4,8 @@ public class KitchenWareProduct extends Product {
     private String type;
     private String features;
 
-    public KitchenWareProduct(String name, String brand, double price, String description, String type, String features) {
-        super(name, brand, price, description);
+    public KitchenWareProduct(String productId, String name, String brand, double price, String description, String type, String features) {
+        super(productId, name, brand, price, description);
         this.type = type;
         this.features = features;
     }
@@ -25,6 +25,11 @@ public class KitchenWareProduct extends Product {
 
     @Override
     public String toString() {
-        return "Kitchen Ware Product: " + getProductName() + ", Brand: " + getBrand() + ", Price: ₹" + formatPrice.format(getPrice()) + ", Type: " + getType() + ", Features: " + getFeatures();
+        return "Kitchen Ware Product: Product Id: " + getProductId() +
+                ", Name: " + getProductName() +
+                ", Brand: " + getBrand() +
+                ", Price: ₹" + formatPrice.format(getPrice()) +
+                ", Type: " + getType() +
+                ", Features: " + getFeatures();
     }
 }

@@ -34,13 +34,16 @@ public class Cart {
     public void displayShoppingCart() {
         if (items.isEmpty()) {
             System.out.println("Your cart is empty.");
-        }
-            else {
+        } else {
             System.out.println("Your cart contains:");
-                for (Product item : items) {
+            for (Product item : items) {
                 System.out.println(item.toString());
             }
         }
+    }
+
+    public void clearCart() {
+        items.clear();
     }
 
 

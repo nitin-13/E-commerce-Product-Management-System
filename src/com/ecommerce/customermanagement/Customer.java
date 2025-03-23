@@ -1,5 +1,7 @@
 package com.ecommerce.customermanagement;
 
+import com.ecommerce.Exceptions.InvalidCardNumber;
+import com.ecommerce.Exceptions.InvalidUPIID;
 import com.ecommerce.cart.Cart;
 import com.ecommerce.ordermanagement.Order;
 import com.ecommerce.payment.*;
@@ -79,7 +81,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Username =" + getUserName() + " Email =" + getEmail() + " Phone=" + phone;
+        return "Username = " + getUserName() + " Email = " + getEmail() + " Phone = " + phone;
     }
 
     public void addCardPayment(String cardNumber, String expiryDate, int cvv) throws InvalidCardNumber {
@@ -94,10 +96,10 @@ public class Customer {
     public void addUPIPayment(String upiId) throws InvalidUPIID {
         String bankName = upiId.substring(upiId.indexOf('@') + 1);
         if (bankName.equalsIgnoreCase("okhdfcbank") || bankName.equalsIgnoreCase("okaxisbank") || bankName.equalsIgnoreCase("oksbi") || bankName.equalsIgnoreCase("okicici") || bankName.equalsIgnoreCase("okkotak") || bankName.equalsIgnoreCase("okidfc")) {
-            throw new InvalidUPIID("Error: Payment Failed, Invalid UPI ID");
-        } else {
             upiPayment = new UPIPayment(upiId);
             System.out.println("UPI ID " + upiId + " added successfully");
+        } else {
+            throw new InvalidUPIID("Error: Payment Failed, Invalid UPI ID");
         }
     }
 
@@ -107,6 +109,21 @@ public class Customer {
 
     public Payment getUPI() {
         return upiPayment;
+    }
+
+    public void displaySavedPayments(){
+        System.out.println(" Your Saved Payment Methods : ");
+        if(cardPayment != null){
+            System.out.println("Card ending with "+cardPayment.getCardNumber());
+        }
+        if(upiPayment != null){
+            System.out.println("UPI ID "+upiPayment.getUpiId());
+        }
+
+    }
+
+    public void clearCart() {
+        cart.clearCart();
     }
 
 
