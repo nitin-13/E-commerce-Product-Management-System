@@ -45,32 +45,31 @@ public class Customer {
         return phone;
     }
 
-    public void addToCart(Product product){
+    public void addToCart(Product product) {
         this.cart.addItem(product);
 
     }
 
-    public void removeFromCart(Product product){
+    public void removeFromCart(Product product) {
         this.cart.removeItem(product);
     }
 
-    public void displayCart(){
+    public void displayCart() {
         this.cart.displayShoppingCart();
     }
 
-    public Cart getCart(){
+    public Cart getCart() {
         return cart;
     }
 
-    public void addOrder(Order order){
+    public void addOrder(Order order) {
         orders.add(order);
     }
 
-    public void getMyOrders(){
+    public void getMyOrders() {
         if (orders.isEmpty()) {
             System.out.println("You have no orders");
-        }
-        else {
+        } else {
             System.out.println("Here are your orders : ");
             for (Order order : orders) {
                 System.out.println(order.getOrderNumber());
@@ -83,12 +82,12 @@ public class Customer {
         return "Username =" + getUserName() + " Email =" + getEmail() + " Phone=" + phone;
     }
 
-    public void addCardPayment(String cardNumber, String expiryDate , int cvv) throws InvalidCardNumber {
+    public void addCardPayment(String cardNumber, String expiryDate, int cvv) throws InvalidCardNumber {
         if (cardNumber.length() != 16) {
             throw new InvalidCardNumber("Error: Payment Failed, Invalid card number");
         } else {
             cardPayment = new CardPayment(cardNumber, expiryDate, cvv);
-            System.out.println("Card ending with "+ cardNumber.substring(12)+" added successfully");
+            System.out.println("Card ending with " + cardNumber.substring(12) + " added successfully");
         }
     }
 
@@ -98,7 +97,7 @@ public class Customer {
             throw new InvalidUPIID("Error: Payment Failed, Invalid UPI ID");
         } else {
             upiPayment = new UPIPayment(upiId);
-            System.out.println("UPI ID "+upiId+" added successfully");
+            System.out.println("UPI ID " + upiId + " added successfully");
         }
     }
 
@@ -109,8 +108,6 @@ public class Customer {
     public Payment getUPI() {
         return upiPayment;
     }
-
-
 
 
 }

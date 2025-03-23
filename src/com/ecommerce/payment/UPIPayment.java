@@ -1,6 +1,6 @@
 package com.ecommerce.payment;
 
-public class UPIPayment extends Payment{
+public class UPIPayment extends Payment {
 
     private String upiId;
 
@@ -11,7 +11,7 @@ public class UPIPayment extends Payment{
     @Override
     public void processPayment(double totalAmount) {
 
-            System.out.println("Paid ₹ " + totalAmount + " using UPI ID " + upiId);
+        System.out.println("Paid ₹ " + totalAmount + " using UPI ID " + upiId);
 
 
     }

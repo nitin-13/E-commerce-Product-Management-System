@@ -10,7 +10,7 @@ import com.ecommerce.service.ShoppingService;
 import com.ecommerce.customermanagement.Customer;
 
 public class Main {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         System.out.println("Welcome to the Ecommerce Platform\n");
 
         ShoppingService shoppingService = new ShoppingService();
@@ -56,7 +56,6 @@ public class Main {
         shoppingService.checkout("nitinshetye13", "upi");
 
         customer1.getMyOrders();
-
 
 
     }
