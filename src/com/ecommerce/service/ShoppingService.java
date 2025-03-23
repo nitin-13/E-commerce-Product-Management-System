@@ -49,9 +49,9 @@ public class ShoppingService {
         Customer customer = findCustomer(userName);
         if(customer != null) {
             if(paymentMethod.equalsIgnoreCase("card")) {
-                return customer.getPaymentMethod();
+                return customer.getCard();
             } else if(paymentMethod.equalsIgnoreCase("upi")) {
-                return customer.getPaymentMethod();
+                return customer.getUPI();
             }
         }
         return null;

@@ -14,7 +14,8 @@ public class Customer {
     private String shippingAddress;
     private String phone;
     private List<Order> orders;
-    private List<Payment> paymentMethods;
+    private CardPayment cardPayment;
+    private UPIPayment upiPayment;
     private Cart cart;
 
 
@@ -24,7 +25,6 @@ public class Customer {
         this.shippingAddress = shippingAddress;
         this.phone = phone;
         this.orders = new ArrayList<>();
-        this.paymentMethods = new ArrayList<>();
         this.cart = new Cart();
 
     }
@@ -84,7 +84,7 @@ public class Customer {
         if (cardNumber.length() != 16) {
             throw new InvalidCardNumber("Error: Payment Failed, Invalid card number");
         } else {
-            paymentMethods.add(new CardPayment(cardNumber, expiryDate, cvv));
+            cardPayment = new CardPayment(cardNumber, expiryDate, cvv);
             System.out.println("Card ending with "+ cardNumber.substring(12)+" added successfully");
         }
     }
@@ -94,14 +94,20 @@ public class Customer {
         if (bankName.equalsIgnoreCase("okhdfcbank") || bankName.equalsIgnoreCase("okaxisbank") || bankName.equalsIgnoreCase("oksbi") || bankName.equalsIgnoreCase("okicici") || bankName.equalsIgnoreCase("okkotak") || bankName.equalsIgnoreCase("okidfc")) {
             throw new InvalidUPIID("Error: Payment Failed, Invalid UPI ID");
         } else {
-            paymentMethods.add(new UPIPayment(upiId));
+            upiPayment = new UPIPayment(upiId);
             System.out.println("UPI ID "+upiId+"added successfully");
         }
     }
 
-    public Payment getPaymentMethod() {
-        return paymentMethods.get(0);
+    public Payment getCard() {
+        return cardPayment;
     }
+
+    public Payment getUPI() {
+        return upiPayment;
+    }
+
+
 
 
 }
